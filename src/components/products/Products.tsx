@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import APIService from "../../ApiService";
-import axios from "axios";
+import { ViewProducts } from "./ViewProducts";
 export function Products() {
 	const [products, setProducts] = useState([]);
 	useEffect(() => {
@@ -23,21 +23,8 @@ export function Products() {
 		// 	});
 	}, []);
 	return (
-		<div>
-			<table>
-				<tr>
-					<th>Name</th>
-					<th>Price</th>
-					<th>Description</th>
-				</tr>
-				{products.map((product: any, index) => (
-					<tr key={index}>
-						<td>{product.item_name}</td>
-						<td>{product.price}</td>
-						<td>{product.item_quantity}</td>
-					</tr>
-				))}
-			</table>
-		</div>
+		// <div>
+		<ViewProducts />
+		// </div>
 	);
 }
